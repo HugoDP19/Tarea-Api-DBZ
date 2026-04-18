@@ -3,6 +3,9 @@ const select = document.getElementById("razas");
 const mensaje = document.getElementById("mensaje");
 const tbody = document.getElementById("cuerpo-tabla");
 
+let listaPersonajes = [];
+
+// Evento formulario
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -20,16 +23,18 @@ form.addEventListener("submit", async (e) => {
     const res = await fetch("https://dragonball-api.com/api/characters");
     const data = await res.json();
 
-    const personajes = data.items.filter(p => p.race === raza);
+    listaPersonajes = data.items.filter(p => p.race === raza);
 
-    mostrarPersonajes(personajes);
-    mensaje.textContent = `Resultados encontrados: ${personajes.length}`;
+    mostrarPersonajes(listaPersonajes);
+
+    mensaje.textContent = `Resultados encontrados: ${listaPersonajes.length}`;
 
   } catch (error) {
     mensaje.textContent = "Error al cargar datos.";
   }
 });
 
+// Mostrar tabla
 function mostrarPersonajes(personajes) {
   tbody.innerHTML = "";
 
@@ -59,4 +64,45 @@ function mostrarPersonajes(personajes) {
 
     tbody.innerHTML += fila;
   });
+}
+
+// Evento botón "Ver"
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-ver")) {
+    const id = e.target.dataset.id;
+    const personaje = listaPersonajes.find(p => p.id == id);
+
+    mostrarDetalle(personaje);
+  }
+});
+
+// Mostrar detalle + transformaciones
+function mostrarDetalle(p) {
+  const panel = document.getElementById("panel-transformaciones");
+
+  const descripcion = p.description?.trim()
+    ? p.description
+    : "Sin descripción disponible";
+
+  let html = `
+    <h3>${p.name}</h3>
+    <p><strong>Descripción:</strong> ${descripcion}</p>
+  `;
+
+  if (p.transformations && p.transformations.length > 0) {
+    html += `<h4>Transformaciones:</h4>`;
+
+    p.transformations.forEach(t => {
+      html += `
+        <div style="margin:10px 0;">
+          <p><strong>${t.name}</strong></p>
+          <img src="${t.image}" width="100">
+        </div>
+      `;
+    });
+  } else {
+    html += `<p>No tiene transformaciones.</p>`;
+  }
+
+  panel.innerHTML = html;
 }
