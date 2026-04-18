@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 4 - API DBZ</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <h1>Tarea 4 - API Dragon Ball Z</h1>
+
+    <section class="cuadro filtros">
+      <h2>Seleccionar raza</h2>
+      <form id="form-razas" autocomplete="off">
+        <select id="razas">
+          <option value="">Seleccione una raza</option>
+          <option value="Saiyan">Saiyajin</option>
+          <option value="Human">Humano</option>
+          <option value="Namekian">Namekiano</option>
+          <option value="Frieza Race">Raza de Freezer</option>
+          <option value="Android">Androide</option>
+          <option value="Majin">Majin</option>
+          <option value="God">Dios</option>
+          <option value="Angel">Ángel</option>
+          <option value="Nucleico benigno">Nucleico benigno</option>
+          <option value="Nucleico">Nucleico</option>
+          <option value="Evil">Maligno</option>
+        </select>
+        <button type="submit" id="mostrar">Mostrar</button>
+      </form>
+      <p id="mensaje"></p>
+    </section>
+
+    <section class="cuadro">
+      <h2>Personajes</h2>
+      <div class="tabla-responsive">
+        <table id="tabla-personajes" class="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Base Ki</th>
+              <th>Total Ki</th>
+              <th>Género</th>
+              <th>Planeta</th>
+              <th>Facción</th>
+              <th>Imagen</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-tabla">
+            <tr>
+              <td colspan="9">Seleccione una raza y presione mostrar.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="cuadro transformaciones">
+      <h2>Transformaciones</h2>
+      <div id="panel-transformaciones" class="panel-transformaciones">
+        <p>Seleccione un personaje desde el botón ver.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal-imagen" class="modal">
+    <div class="modal-contenido">
+      <button type="button" id="cerrar-modal" class="cerrar">X</button>
+      <h2 id="modal-titulo">Imagen</h2>
+      <img src="" alt="Imagen del personaje" id="imagen-modal">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
