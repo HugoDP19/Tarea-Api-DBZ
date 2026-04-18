@@ -1,0 +1,161 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* HEADER */
+.header {
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* CONTENEDOR */
+.contenedor {
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* CUADROS */
+.cuadro {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* TITULOS */
+h2 {
+  margin-bottom: 15px;
+}
+
+/* FORMULARIO */
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.grupo-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+/* SELECT */
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* BOTON */
+.btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+}
+
+/* MENSAJE */
+.mensaje {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* TABLA */
+.tabla-responsive {
+  overflow-x: auto;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla th,
+.tabla td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabla th {
+  background: #1f2937;
+  color: white;
+}
+
+/* IMAGEN TABLA */
+.tabla img {
+  width: 50px;
+  border-radius: 5px;
+}
+
+/* TEXTO CENTRADO */
+.texto-centro {
+  text-align: center;
+}
+
+/* PANEL TRANSFORMACIONES */
+.panel-transformaciones {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.modal img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* BOTON CERRAR */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+}
